@@ -8,9 +8,11 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="demo.*" %>
+<%@ page import="model.BookDAO" %>
+<%@ page import="model.BooksEntity" %>
 <%
-  BookDBAO db = new BookDBAO();
-  BookDetails book = db.getBook();
+  BookDAO db = new BookDAO();
+  BooksEntity book = db.getBook();
 %>
 <html>
 <head><title>Duke's Bookstore</title></head>
@@ -23,7 +25,7 @@
   <hr>
 </center>
 <br> <b>What we are reading</b>
-<blockquote><em><a href="bookdetails?bookId=<%= book.getBookId() %>"><%= book.getTitle() %></a></em> What a cool book.
+<blockquote><em><a href="bookdetails?bookId=<%= book.getId() %>"><%= book.getTitle() %></a></em> What a cool book.
 </blockquote>
 <p><a href="bookcatalog"><b>Start Shopping</b></a></p>
 </body>
